@@ -23,7 +23,7 @@ function loadAdditionContentsJS($args) {
     global $Wcms;
     if ($Wcms->loggedIn) {
         $script = <<<EOT
-        <script src="{$Wcms->url('plugins/additional-contents-lite/js/script.js')}" type="text/javascript"></script>
+        <script src="{$Wcms->url('plugins/additional-contents-lite/js/additional-contents-lite.js')}" type="text/javascript"></script>
 EOT;
         $args[0].=$script;
     }
@@ -34,7 +34,7 @@ function loadAdditionContentsCSS($args) {
     global $Wcms;
     if ($Wcms->loggedIn) {
         $script = <<<EOT
-        <link rel="stylesheet" href="{$Wcms->url('plugins/additional-contents-lite/css/style.css')}" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="{$Wcms->url('plugins/additional-contents-lite/css/additional-contents-lite.css')}" type="text/css" media="screen" charset="utf-8">
 EOT;
         $args[0].=$script;
     }
