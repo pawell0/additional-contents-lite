@@ -6,7 +6,8 @@
  *
  * @author Prakai Nadee <prakai@rmuti.acth> pre-fork: version 1.1.0
  * @forked by Robert Isoski @robiso
- * @version 3.0.0
+ * @forked by Paweł Krużel @pawell0
+ * @version 1.0.0
  */
 
 global $Wcms;
@@ -22,7 +23,6 @@ function loadAdditionContentsJS($args) {
     global $Wcms;
     if ($Wcms->loggedIn) {
         $script = <<<EOT
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
         <script src="{$Wcms->url('plugins/additional-contents/js/script.js')}" type="text/javascript"></script>
 EOT;
         $args[0].=$script;
@@ -130,7 +130,7 @@ function loadAdditionContentsEditableV2($contents) {
             <b  style="cursor: pointer; float: right;" value="'.$i.'" class="toolbar content_delete" data-toggle="tooltip" title="Remove editable area"> Remove editable area</b>
             </div>';
             $content.= '
-            <hr />';
+            <hr class="content-separator" />';
             $content.= $addition_content = $Wcms->editable('addition_content_'.$i, $addition_content, 'pages');
         }
         $content.= '</div>';
@@ -144,7 +144,7 @@ function loadAdditionContentsEditableV2($contents) {
             $addition_content_show = getContentV2('addition_content_show_'.$i);
             $addition_content_show = ($addition_content_show) ? $addition_content_show:'show';
             if ($addition_content_show=='show')
-                $content.='<hr /><div id="addition_content_'.$i.'">'.$addition_content.'</div>';
+                $content.='<hr class="content-separator" /><div id="addition_content_'.$i.'">'.$addition_content.'</div>';
         }
     }
     $contents[0] = $content;
