@@ -4,6 +4,8 @@
 ## Description
 WonderCMS plugin for adding additional contents / new editable areas.
 
+This version of the plugin does not call jQuery. Horizontal rules have CSS class "content-separator" so you can give them CSS style - also hide them this way if needed.
+
 ## Preview
 ![Plugin preview](/preview.jpg)
 
