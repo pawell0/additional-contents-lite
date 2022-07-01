@@ -23,6 +23,7 @@ function loadAdditionContentsJS($args) {
     global $Wcms;
     if ($Wcms->loggedIn) {
         $script = <<<EOT
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
         <script src="{$Wcms->url('plugins/additional-contents-lite/js/additional-contents-lite.js')}" type="text/javascript"></script>
 EOT;
         $args[0].=$script;
